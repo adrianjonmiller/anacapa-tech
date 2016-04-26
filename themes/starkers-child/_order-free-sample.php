@@ -19,6 +19,7 @@ try
 		'zip_postal_code' => $_POST['zip_postal_code'],
 		'country' 				=> $_POST['country'],
 		'product_type' 		=> $_POST['product_type'],
+		'human_health' 		=> "HH",
 		'user_id' 				=> 909757,
 		'website' 				=> $_SERVER['HTTPS'],
 	]);
