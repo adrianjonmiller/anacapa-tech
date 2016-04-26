@@ -1,0 +1,22 @@
+/*
+Theme Name: 	Anacapa Tech
+Description: 	Theme for Anacapa Tech
+Version: 		0.1
+Author: 		Adrian J. Miller
+Author URI: 	http://adrianmillerdesign.com
+Template:		starkers-master
+Tags: 			starkers, naked, clean, basic
+*/
+
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+table tr {
+	border-top: 1px solid white;
+}
+
+footer #copywrite {
+	display: block;
+	visibility: visible;;
+}

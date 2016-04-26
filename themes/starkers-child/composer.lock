@@ -1,0 +1,68 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "29ac50155979bb1eb0ea1daca1024e98",
+    "content-hash": "57a724e8a73956631f4db60a70b9448b",
+    "packages": [
+        {
+            "name": "basecrm/basecrm-php",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/basecrm/basecrm-php.git",
+                "reference": "d69efc39501b220aad1665ffbaf1f35a35b1e84a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/basecrm/basecrm-php/zipball/d69efc39501b220aad1665ffbaf1f35a35b1e84a",
+                "reference": "d69efc39501b220aad1665ffbaf1f35a35b1e84a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BaseCRM\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "BaseCRM developers",
+                    "email": "developers@getbase.com",
+                    "homepage": "https://github.com/basecrm/basecrm-php/graphs/contributors"
+                }
+            ],
+            "description": "BaseCRM Official API V2 library client for PHP",
+            "homepage": "http://developers.getbase.com/",
+            "keywords": [
+                "api",
+                "base crm",
+                "client",
+                "http",
+                "http client",
+                "v2"
+            ],
+            "time": "2016-02-25 23:36:45"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,25 @@
+.sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+.sortable li {
+  font-size: 11px;
+  height: 10px;
+  margin: 6px 5px 3px;
+  padding: 7px;
+  width: 150%;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: url("../images/ui-bg_glass.png") repeat-x scroll 50% 50% #E6E6E6;
+  border: 1px solid #D3D3D3;
+  color: #555555;
+  font-weight: normal;
+}
+
+.ui-state-highlight{
+  background: url("../images/ui-bg_glass.png") repeat-x scroll 50% 50% #E6E6E6;
+  border: 1px solid #D54E21;
+  color: #555555;
+  font-weight: normal;
+
+}
+.sortable {
+  list-style-type: none;
+}

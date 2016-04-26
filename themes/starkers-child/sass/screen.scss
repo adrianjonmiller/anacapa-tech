@@ -1,0 +1,532 @@
+@import "compass/reset";
+@import "compass/css3/box-shadow";
+@import "compass/typography";
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+
+@import 'vars';
+@import 'base';
+
+@include establish-baseline();
+
+* {
+//	@include debug-vertical-alignment;
+}
+
+body {
+	font-family: "museo", sans-serif;
+	font-weight: 300;
+	color: $text-color-1;
+	background: white;
+	
+	a {
+		@include link-colors($text-color-2, $text-color-2 - 40);
+		@include hover-link;
+	}
+}
+
+@include grid-base($pad);
+
+h2 {
+	@include adjust-font-size-to(26px);
+}
+
+h3 {
+	@include adjust-font-size-to(20px);
+	}
+
+h4 {
+	@include adjust-font-size-to(16px);
+	color: $text-color-2;
+}
+
+b, strong {
+	font-weight: 700;
+}
+
+p {
+	font-weight: 300;
+}
+
+article ul {
+	list-style: disc;
+	li {
+		list-style: disc;
+		margin-left: $pad;
+	}
+}
+
+article ol {
+	list-style-type: decimal;
+	li {
+		list-style-type: decimal;
+		margin-left: $pad;
+	}
+}
+
+.container {
+	padding: 0 $pad;
+}
+
+header {
+	position: relative;
+	z-index: 2;
+	background-image: url(../img/bg-body.png);
+	background-repeat: repeat-x;
+	position: left top;
+	
+	.container {
+		background-color: $background-color-1;
+		height: 175px;
+		background-image: url(../img/bg-header.png);
+		background-repeat: repeat-x;
+		background-position: left top;
+		
+		@media screen and (min-width: 480px){
+		
+			&:after {
+				content: "";
+				background: url(../img/gradient-top.png);
+				display: block;
+				width: 100%;
+				height: 16px;
+				position: absolute;
+				top: 100%;
+				margin-left: -$pad;
+				z-index: 0;
+			}
+		}
+	
+		h1 {
+			max-width: 300px;
+			display: block;
+			padding-top: 30px;
+			
+			@media screen and (min-width: 480px) {
+				padding-top: 50px;
+			}
+			img {
+				width: 100%
+			}
+		}
+		
+		h2#description {
+			
+			@media screen and (min-width: 480px) {
+				position: absolute;
+				left: 375px;
+				top: 65px;
+			}
+			
+			@include adjust-font-size-to(32px);
+		}
+		
+		#search {
+			display: none;
+		}
+		
+		nav#primary {
+			
+			@media screen and (max-width: 480px) {
+				display: none;
+			}
+			
+			position: absolute;
+			margin: 0 (-$pad);
+			background-color: white;
+			width: 100%;
+			bottom: 0;
+			z-index: 1;
+			
+			ul {
+				@include clearfix;
+				
+				& > li {
+					float: left;
+					display: inline-table;
+					padding: 0 $pad;
+					border-right: solid 3px $background-color-1;
+					position: relative;
+					
+					&:last-of-type {
+						border-right: none;
+					}
+					
+					&:hover, &.current-menu-item, &.current-menu-parent {
+						background-color: #666666;
+						cursor: pointer;
+						
+						a {
+							color: white;
+							
+							&:hover {
+								text-decoration: none;
+							}
+						}
+					}
+					
+					&.current-menu-item {
+						cursor: default;
+					}
+					
+					a {
+						color: $link-color-1;
+					}
+					
+					ul.sub-menu {
+						position: absolute;
+						left: -9999px;
+						z-index: 3;
+						@include box-shadow(0 5px 5px rgba(black, .7));
+						
+						li {
+							display: block;
+							float: none;
+							border: none;
+							position: relative;
+							margin-bottom: 1px;
+							background: gray;
+							height: 28px;
+							
+							&:last-of-type {
+								margin-bottom: 0;
+							}
+							
+							&:hover {
+								background: #666;
+							}
+							
+							a {
+								white-space: nowrap;
+							}
+							
+							> ul.sub-menu {
+								position: absolute;
+								left: -9999em;
+								top: 0;
+								margin-left: 1px;
+								z-index: 1;
+								@include box-shadow(0 5px 5px rgba(black, .7));
+								
+								li {
+									height: 28px;
+									margin-bottom: 1px;
+									margin-left: 1px;
+									background: #888;
+									
+									&:hover {
+										background: #666;
+									}
+								}
+							}
+						}
+					}
+					
+					&:hover ul.sub-menu {
+						left: 0;
+						> li:hover {
+							ul.sub-menu {
+								left: 100%;
+								top: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		select#mobile-menu-primary {
+			display: none;
+			margin-top: $pad;
+			
+			@media screen and (max-width: 480px) {
+				display: block;
+			}
+		}
+	}
+}
+
+#main {
+	position: relative;
+	z-index: 1;
+	
+	.container {
+		background: $background-color-1;
+		padding-top: 40px;
+		padding-bottom: $pad;
+	}
+}
+
+footer {
+	margin-top: -$pad;
+	position: relative;
+	z-index: 3;
+	
+	.container {
+		background: $background-color-3;
+		min-height: 200px;
+		
+		&:before {
+			content: "";
+			background: url(../img/gradient-bottom.png);
+			display: block;
+			width: 100%;
+			height: 16px;
+			position: absolute;
+			bottom: 100%;
+			margin-left: -$pad;
+		}
+	}
+	
+	#footer-menu {
+		padding: $pad 0 0;
+		margin-left: -$pad;
+		
+		ul {
+			@include clearfix();
+			
+			& > li {
+				float: left;
+				padding: 0 $pad;
+				border-right: solid 2px $link-color-1;
+				&:last-of-type {
+					border-right: none;
+				}
+				
+				a {
+					@include link-colors($text-color-1, $link-color-2);
+					@include adjust-font-size-to(14px);
+					font-weight: 500;
+				}
+			}
+		}
+	}
+	
+	#copywrite {
+		position: absolute;
+		right: $pad;
+		bottom: $pad;
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.flexslider {
+	
+	.slides {
+		> li {
+			img {
+			}
+			.flex-caption {
+				 position: absolute;
+				 top: $pad;
+				 left: $pad;
+				 @include adjust-font-size-to(30px);
+			}
+		}
+	}
+}
+
+.home-main > { .col-3-4, .sidebar-links {
+		@media screen and (max-width: 720px) and (min-width: 480px) {
+	//		width: 50%;
+		}
+	}
+}
+
+
+.products {
+	border: none;
+	
+	.product {
+		background: white;
+		@include border-radius($pad);
+		padding: $pad;
+		height: 100%;
+	
+		
+				
+		h4 {
+			 
+			a {
+				font-weight: 300;
+			}
+		}
+		
+		.product-image {
+			text-align: center;
+			padding-top: $pad;
+			position: relative;
+			
+			img {
+				max-height: 300px;
+			}
+		}
+		@media screen and (max-width: 480px) {
+			.product-image img {
+				max-height: 150px;
+			}
+		}
+	}
+}
+
+.product-page-image {
+	width: 100%;
+	background: white;
+	text-align: center;
+	padding: $pad;
+	
+	img {
+		display: inline;
+	}
+}
+
+.sidebar-links {
+	
+	background: $background-color-2;
+	
+	@include adjust-font-size-to(11px);
+	
+	@include border-radius($pad);
+	
+	padding-bottom: $pad;
+	
+	.module {
+		padding: $pad;
+		padding-bottom: 0;
+		
+		h4 {
+			font-weight: 500;
+		}
+	}
+}
+
+.social-media-links {
+	position: absolute;
+	padding: $pad;
+	bottom: 0;
+	left: 0;
+	
+	.social-media-link {
+		display: block;
+		width: 50px;
+		height: 50px;
+		float: left;
+		margin-right: $pad;
+		position: relative;
+		text-indent: -999px;
+		text-align: center;
+		vertical-align: middle;
+		overflow: hidden;
+		background-color: $link-color-2;
+		
+		&:hover {
+			text-decoration: none;
+			background-color: $link-color-2 + 10; 
+		}
+		
+		&:after {
+			font-family: 'socialicoregular', sans-serif;
+			text-indent: 0;
+			display: block;
+			color: white;
+			font-size: 48px;
+//			text-shadow: 0 1px #000, 0 -1px #fff;
+//			color: $link-color-2 + 95;
+			color: white;
+			line-height: 12px;
+			background: transparent;
+		}
+	}
+	
+	#facebook {
+		&:after {
+			content: "F";
+		}
+	}
+	
+	#twitter {
+		&:after {
+			content: "L";
+		}
+	}
+	#google-plus {
+		&:after {
+			content: "G";
+		}
+	}
+}
+
+.white-background {
+	background-color: white;
+	padding: $pad;
+}
+
+.blue-background {
+	@extend .white-background;
+	background-color: adjust-lightness(#71cae8, 20%);
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.product-main-image {
+	width: 100%;
+	display: block;
+}
+
+ul.all-products {
+	list-style: none;
+	li {
+		list-style: none;
+		margin: 0;
+		padding: $pad 0;
+		border-bottom: solid thin #ccc;
+		border-top: solid thin #f3f3f3;
+		
+		@include clearfix();
+		
+		img.product-main-image-thumbnail {
+			float: left;
+			margin-right: $pad;
+			max-width: 200px;
+		}
+		
+		&:first-of-type {
+			padding-top: 0;
+			border-top: none;
+		}
+		
+		&:last-of-type {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+}
+
+.widget {
+	margin-bottom: 21px;
+}
+
+.widget_sp_image {
+	width: 100%;
+	text-align: center;
+	background: white;
+	
+	@include border-radius(21px);
+}
+
+.flexslider .slides > li .flex-caption {
+	color: #49a2c0;
+	@include adjust-font-size-to(18px);
+}
+
+.banner-text {
+	max-width: 50%;
+}
