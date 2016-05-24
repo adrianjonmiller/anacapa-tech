@@ -70,9 +70,8 @@ DLN.Behaviors.freeSample = function(container) {
 				url         : '/live/wp-content/themes/starkers-child/_order-free-sample.php', // the url where we want to POST
 				data        : formData // our data object
 		}).done(function(data) {
-			console.log(data);
 		}).success(function(data){
-			$(container).html(data);
+			$(container).html("Thank you for your submission.");
 		})
 	});
 }
