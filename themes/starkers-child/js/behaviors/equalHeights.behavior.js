@@ -67,7 +67,7 @@ DLN.Behaviors.freeSample = function(container) {
 
 		$.ajax({
 				type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-				url         : '/wp-content/themes/starkers-child/_order-free-sample.php', // the url where we want to POST
+				url         : '/live/wp-content/themes/starkers-child/_order-free-sample.php', // the url where we want to POST
 				data        : formData // our data object
 		}).done(function(data) {
 			console.log(data);
