@@ -23,8 +23,7 @@
 		<?php the_title(); ?>
 	</h2>
 	<article class="module white-background">
-		<script type="text/javascript" src="https://leads-capturer.futuresimple.com/embed.js?token=46ab776901e9c9c040d707119fb6f12f"></script>
-		<!-- <p>
+		<p>
 			All fields are required
 		</p>
 		<form data-behavior="freeSample">
@@ -161,7 +160,7 @@
 			<fieldset>
 				<input type="submit" name="name" value="Submit">
 			</fieldset>
-		</form> -->
+		</form>
 	</article>
 <?php endwhile; ?>
 	</div>
