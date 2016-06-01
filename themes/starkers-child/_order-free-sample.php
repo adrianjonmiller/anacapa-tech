@@ -14,17 +14,17 @@ if(!empty($_POST)) {
       'company_name'		=> $_POST['company_name'],
       'email' 					=> $_POST['email'],
       'phone_number' 		=> $_POST['phone_number'],
-      'address' => [
+      'address'         => [
         'line1'         => $_POST['address'],
         'city' 				  => $_POST['city'],
         'state' 				=> $_POST['state'],
         'postal_code'   => $_POST['zip_postal_code'],
         'country' 			=> $_POST['country'],
       ],
-      'product_type' 		=> $_POST['product_type'],
-      'human_health' 		=> "HH",
-      'owner_id' 				=> 909757,
-      'website' 				=> "anacapa-tech.net",
+      'custom_fields'   => [
+        "hh_or_ah"      => 'Human Health',
+        'product_type' 	=> $_POST['product_type'],
+      ]
     ]);
 
     print_r($lead);
